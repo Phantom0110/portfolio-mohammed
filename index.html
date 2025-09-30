@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mohammed Ali — Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Mohammed Ali</h1>
+    <p>Unreal Engine / C++ / Game systems</p>
+    <nav>
+      <a href="#projects">Projects</a> ·
+      <a href="#about">About</a> ·
+      <a href="Mohammed_s_Resume.pdf" target="_blank">Resume</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="projects">
+      <h2>Highlighted Projects</h2>
+      <article>
+        <h3><a href="projects/resigil.html">Re-Sigil</a></h3>
+        <p>Dark fantasy horror prototype built in UE5 — systems: interact, inventory, world-space UI.</p>
+      </article>
+      <article>
+        <h3>Draco Disease Game</h3>
+        <p>Third person action RPG with thrilling storytelling and combat. I designed an item called the cursed altar
+            where the player receives a random debuff in exchange for a chosen buff.
+        </p>
+      </article>
+      <!-- add more -->
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>Hello, my name is Mohammed Ali, and I am an Unreal Engine 5 developer. I specialize in blueprint scripting as well as level design.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:mohamali9173@gmail.com">mohamali9173@gmail.com</a></p>
+      <p>Phone: +1 352-874-5065</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Mohammed Ali — <a href="https://github.com/Phantom0110">GitHub</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
