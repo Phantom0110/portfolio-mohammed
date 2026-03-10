@@ -336,3 +336,55 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add loading animation complete class
     document.body.classList.add('loaded');
 });
+
+// ===== Project Modals =====
+const videoModal = document.getElementById('videoModal');
+const detailsModal = document.getElementById('detailsModal');
+const openVideoBtn = document.querySelector('.open-video');
+const openDetailsBtn = document.querySelector('.open-details');
+
+function openModal(modal) {
+    if (!modal) return;
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+}
+
+function closeModal(modal) {
+    if (!modal) return;
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+
+    const video = modal.querySelector('video');
+    if (video) {
+        video.pause();
+    }
+}
+
+if (openVideoBtn) {
+    openVideoBtn.addEventListener('click', () => openModal(videoModal));
+}
+
+if (openDetailsBtn) {
+    openDetailsBtn.addEventListener('click', () => openModal(detailsModal));
+}
+
+document.querySelectorAll('.modal').forEach(modal => {
+    const closeBtn = modal.querySelector('.modal-close');
+    const backdrop = modal.querySelector('.modal-backdrop');
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => closeModal(modal));
+    }
+
+    if (backdrop) {
+        backdrop.addEventListener('click', () => closeModal(modal));
+    }
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        document.querySelectorAll('.modal.active').forEach(modal => closeModal(modal));
+    }
+});

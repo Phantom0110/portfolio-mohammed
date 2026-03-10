@@ -111,14 +111,14 @@
                 <!-- Project 1 -->
                 <article class="project-card">
                     <div class="project-image">
-                        <div class="project-placeholder">Re:Sigil (UE5)</div>
+                        <img src="assets/resigil-cover.png" alt="Re:Sigil screenshot" class="project-cover-image">
                         <div class="project-overlay">
-                            <a href="#" class="project-link" aria-label="Watch gameplay trailer">
+                            <button class="project-link open-video" type="button" aria-label="Watch gameplay trailer">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <polygon points="5 3 19 12 5 21 5 3"></polygon>
                                 </svg>
-                            </a>
-                            <a href="#" class="project-link" aria-label="Read dev notes / documentation">
+                            </button>
+                            <button class="project-link open-details" type="button" aria-label="Read dev notes / documentation">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                                     <polyline points="14 2 14 8 20 8"></polyline>
@@ -126,7 +126,7 @@
                                     <line x1="16" y1="17" x2="8" y2="17"></line>
                                     <line x1="10" y1="9" x2="8" y2="9"></line>
                                 </svg>
-                            </a>
+                            </button>
                         </div>
                     </div>
                     <div class="project-info">
@@ -141,7 +141,7 @@
                             <span>Gameplay Systems</span>
                         </div>
                     </div>
-                </article>
+            </article>
             </div>
         </div>
     </section>
@@ -196,6 +196,47 @@
             </div>
         </div>
     </footer>
+
+    <!-- Re:Sigil Video Modal -->
+<div class="modal" id="videoModal" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content modal-video-content">
+        <button class="modal-close" type="button" aria-label="Close video modal">&times;</button>
+        <h3>Re:Sigil Gameplay</h3>
+        <video controls preload="metadata" class="modal-video">
+            <source src="assets/resigil-demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
+
+<!-- Re:Sigil Details Modal -->
+<div class="modal" id="detailsModal" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content modal-details-content">
+        <button class="modal-close" type="button" aria-label="Close details modal">&times;</button>
+        <h3>Re:Sigil — Project Breakdown</h3>
+        <p>
+            Re:Sigil is a psychological horror vertical slice built in Unreal Engine 5, centered on
+            environmental storytelling, atmospheric tension, and interactive narrative design.
+        </p>
+
+        <h4>Systems Implemented</h4>
+        <ul class="modal-list">
+            <li>Modular interaction framework for world objects</li>
+            <li>Event-driven progression controlling puzzle and narrative flow</li>
+            <li>World-space subtitle UI with typewriter presentation</li>
+            <li>Door state and trigger-based gameplay logic</li>
+            <li>Atmospheric lighting and Niagara-driven visual effects</li>
+        </ul>
+
+        <div class="modal-gallery">
+            <img src="assets/resigil-1.png" alt="Re:Sigil screenshot 1">
+            <img src="assets/resigil-2.png" alt="Re:Sigil screenshot 2">
+            <img src="assets/resigil-3.png" alt="Re:Sigil screenshot 3">
+        </div>
+    </div>
+</div>
 
     <script src="script.js"></script>
 </body>
