@@ -135,19 +135,14 @@ contactForm.addEventListener('submit', function(e) {
         return;
     }
 
-    // Simulate form submission
-    const submitBtn = contactForm.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
+    // Hand the message off to the visitor's email client
+    const subject = `Portfolio inquiry from ${formData.name}`;
+    const body = `${formData.message}
 
-    // Simulate API call
-    setTimeout(() => {
-        showNotification('Message sent successfully!', 'success');
-        contactForm.reset();
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-    }, 1500);
+${formData.name}
+${formData.email}`;
+    window.location.href = `mailto:mohamali9173@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    showNotification('Opening your email app...', 'success');
 });
 
 // ===== Notification System =====
@@ -285,10 +280,10 @@ function animateCounter(element, target, duration = 2000) {
     function updateCounter() {
         start += increment;
         if (start < target) {
-            element.textContent = Math.floor(start) + '+';
+            element.textContent = Math.floor(start);
             requestAnimationFrame(updateCounter);
         } else {
-            element.textContent = target + '+';
+            element.textContent = target;
         }
     }
 
@@ -299,12 +294,9 @@ function animateCounter(element, target, duration = 2000) {
 const statsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            const statNumbers = entry.target.querySelectorAll('.stat-number');
+            const statNumbers = entry.target.querySelectorAll('.stat-number[data-count]');
             statNumbers.forEach(stat => {
-                const value = parseInt(stat.textContent);
-                if (!isNaN(value)) {
-                    animateCounter(stat, value);
-                }
+                animateCounter(stat, parseInt(stat.dataset.count, 10));
             });
             statsObserver.unobserve(entry.target);
         }
@@ -338,11 +330,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ===== Project Modals =====
-const videoModal = document.getElementById('videoModal');
-const detailsModal = document.getElementById('detailsModal');
-const openVideoBtn = document.querySelector('.open-video');
-const openDetailsBtn = document.querySelector('.open-details');
-
 function openModal(modal) {
     if (!modal) return;
     modal.classList.add('active');
@@ -362,13 +349,9 @@ function closeModal(modal) {
     }
 }
 
-if (openVideoBtn) {
-    openVideoBtn.addEventListener('click', () => openModal(videoModal));
-}
-
-if (openDetailsBtn) {
-    openDetailsBtn.addEventListener('click', () => openModal(detailsModal));
-}
+document.querySelectorAll('[data-modal]').forEach(btn => {
+    btn.addEventListener('click', () => openModal(document.getElementById(btn.dataset.modal)));
+});
 
 document.querySelectorAll('.modal').forEach(modal => {
     const closeBtn = modal.querySelector('.modal-close');

@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | UE5 Game Developer</title>
+    <title>Mohammed Ali | Software Engineer</title>
+    <meta name="description" content="Mohammed Ali, software engineer and UF Computer Science graduate building concurrent systems in C++ and event-driven software in Python, TypeScript, and Unreal Engine 5.">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -16,6 +17,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <button class="mobile-menu-btn" aria-label="Toggle menu">
@@ -31,10 +33,11 @@
         <div class="hero-content">
             <p class="hero-greeting">Hello, I'm</p>
             <h1 class="hero-name">Mohammed Ali</h1>
-            <h2 class="hero-title">Unreal Engine 5 Developer</h2>
+            <h2 class="hero-title">Software Engineer</h2>
             <p class="hero-description">
-                Unreal Engine 5 developer focused on developing gameplay systems, AI behavior, and atmospheric horror experiences.
-                Currently building <strong>Re:Sigil</strong> - a narrative-driven psychological horror vertical slice.
+                Computer Science graduate from the University of Florida who writes performant, well-tested
+                code in C++, Python, and TypeScript. I've built a <strong>lock-free concurrent queue</strong>
+                in C++17 with benchmarks and correctness tests, and event-driven architectures in Unreal Engine 5.
             </p>
             <div class="hero-buttons">
                 <a href="#projects" class="btn btn-primary">View My Work</a>
@@ -66,37 +69,45 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        I'm a passionate game developer specializing in Unreal Engine 5. With expertise
-                        in both Blueprints and C++, I create engaging gameplay systems, realistic environments,
-                        and optimized game mechanics that deliver unforgettable player experiences.
+                        I'm a Computer Science graduate from the University of Florida (B.S., May 2026). I love
+                        the parts of games players feel but never see: interaction frameworks, event-driven world
+                        state, and the UI that ties a story together.
                     </p>
                     <p>
-                        From prototyping to polished builds, I love tackling every aspect of game development.
-                        Whether it's implementing complex AI behaviors, crafting dynamic lighting, or
-                        optimizing for performance, I'm always pushing the boundaries of what's possible in UE5.
+                        I'm just as comfortable below the engine. I implemented the Michael-Scott lock-free queue
+                        in C++17, tuned it for cache-line contention, and benchmarked it honestly against a mutex
+                        baseline. I've also taught Discrete Mathematics as a TA and done geometry research at Kyoto
+                        University, and I speak English, Arabic, and Japanese.
                     </p>
                     <div class="skills">
                         <h3>Technologies I work with:</h3>
                         <div class="skills-grid">
                             <span class="skill-tag">Unreal Engine 5</span>
                             <span class="skill-tag">Blueprints</span>
-                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">C++17</span>
                             <span class="skill-tag">Niagara VFX</span>
-                            <span class="skill-tag">Lumen / Nanite</span>
-                            <span class="skill-tag">AI & Behavior Trees</span>
-                            <span class="skill-tag">Multiplayer / Replication</span>
-                            <span class="skill-tag">Git / Perforce</span>
+                            <span class="skill-tag">Unity</span>
+                            <span class="skill-tag">Godot / GDScript</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">JavaScript / TypeScript</span>
+                            <span class="skill-tag">Concurrency &amp; Atomics</span>
+                            <span class="skill-tag">Blender</span>
+                            <span class="skill-tag">Git / GitHub</span>
                         </div>
                     </div>
                 </div>
                 <div class="about-stats">
                     <div class="stat-card">
-                        <span class="stat-number">2+</span>
-                        <span class="stat-label">Years in UE5</span>
+                        <span class="stat-number" data-count="4">4</span>
+                        <span class="stat-label">Featured Projects</span>
                     </div>
                     <div class="stat-card">
-                        <span class="stat-number">5+</span>
-                        <span class="stat-label">Game Systems Built</span>
+                        <span class="stat-number" data-count="3">3</span>
+                        <span class="stat-label">Languages Spoken</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">3.62</span>
+                        <span class="stat-label">GPA &middot; Dean's List &times;3</span>
                     </div>
                 </div>
             </div>
@@ -113,12 +124,12 @@
                     <div class="project-image">
                         <img src="assets/resigil-cover.png" alt="Re:Sigil screenshot" class="project-cover-image">
                         <div class="project-overlay">
-                            <button class="project-link open-video" type="button" aria-label="Watch gameplay trailer">
+                            <button class="project-link" data-modal="videoModal" type="button" aria-label="Watch gameplay trailer">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <polygon points="5 3 19 12 5 21 5 3"></polygon>
                                 </svg>
                             </button>
-                            <button class="project-link open-details" type="button" aria-label="Read dev notes / documentation">
+                            <button class="project-link" data-modal="detailsModal" type="button" aria-label="Read dev notes / documentation">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                                     <polyline points="14 2 14 8 20 8"></polyline>
@@ -130,6 +141,7 @@
                         </div>
                     </div>
                     <div class="project-info">
+                        <span class="project-badge">Solo Project &middot; UE5</span>
                         <h3>Re:Sigil — Psychological Horror Vertical Slice</h3>
                         <p>
                             Narrative-driven psychological horror in Unreal Engine 5, focused on environmental storytelling,
@@ -139,9 +151,144 @@
                             <span>UE5</span>
                             <span>Blueprints</span>
                             <span>Gameplay Systems</span>
+                            <span>Niagara</span>
+                        </div>
+                        <button class="project-more" data-modal="detailsModal" type="button">Read breakdown &rarr;</button>
+                    </div>
+                </article>
+
+                <!-- Lock-Free Queue -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder project-art">
+                            <code class="project-art-code">tail_-&gt;next.compare_exchange_weak(...)</code>
+                        </div>
+                        <div class="project-overlay">
+                            <button class="project-link" data-modal="queueModal" type="button" aria-label="Read Lock-Free Queue breakdown">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                </svg>
+                            </button>
+                            <a class="project-link" href="https://github.com/Phantom0110/lock-free-queue" target="_blank" rel="noopener" aria-label="View source on GitHub">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            </a>
                         </div>
                     </div>
-            </article>
+                    <div class="project-info">
+                        <span class="project-badge">Solo Project &middot; Systems</span>
+                        <h3>Lock-Free Concurrent Queue</h3>
+                        <p>The Michael-Scott non-blocking queue in C++17 using std::atomic and CAS loops, with cache-line padding, ABA-safe memory management, and a benchmark against a mutex baseline.</p>
+                        <div class="project-tags">
+                            <span>C++17</span>
+                            <span>std::atomic</span>
+                            <span>Concurrency</span>
+                            <span>CMake</span>
+                        </div>
+                        <button class="project-more" data-modal="queueModal" type="button">Read breakdown &rarr;</button>
+                    </div>
+                </article>
+
+                <!-- Draco Disease -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder project-art">
+                            <span class="project-art-title">Draco Disease</span>
+                        </div>
+                        <div class="project-overlay">
+                            <button class="project-link" data-modal="dracoModal" type="button" aria-label="Read Draco Disease breakdown">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-badge">Game Jam &middot; Team</span>
+                        <h3>Draco Disease — Game Jam RPG</h3>
+                        <p>A team-built Unreal Engine 5 RPG made during a game jam. I built gameplay mechanics, including a risk/reward cursed altar and toon-shaded outlines that unify the 2D and 3D art.</p>
+                        <div class="project-tags">
+                            <span>UE5</span>
+                            <span>Blueprints</span>
+                            <span>Game Jam</span>
+                            <span>Shaders</span>
+                        </div>
+                        <button class="project-more" data-modal="dracoModal" type="button">Read breakdown &rarr;</button>
+                    </div>
+                </article>
+
+                <!-- AI RPG -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder project-art">
+                            <span class="project-art-title">AI-Generated Abilities</span>
+                        </div>
+                        <div class="project-overlay">
+                            <button class="project-link" data-modal="aiRpgModal" type="button" aria-label="Read AI RPG breakdown">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-badge">Prototype</span>
+                        <h3>AI RPG Prototype</h3>
+                        <p>A Godot RPG prototype where the OpenAI API generates abilities and an algorithm balances them by assigning combat stats to each one.</p>
+                        <div class="project-tags">
+                            <span>Godot</span>
+                            <span>GDScript</span>
+                            <span>Python</span>
+                            <span>OpenAI API</span>
+                        </div>
+                        <button class="project-more" data-modal="aiRpgModal" type="button">Read breakdown &rarr;</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Education Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Experience &amp; Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3>Discrete Mathematics Teaching Assistant</h3>
+                        <span class="timeline-org">University of Florida</span>
+                    </div>
+                    <p>Led discussion sessions reinforcing lecture material and held weekly office hours for undergraduate students.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3>Architecture Research Assistant</h3>
+                        <span class="timeline-org">Kyoto University</span>
+                    </div>
+                    <p>Modeled complex Monge surface geometries in Rhino and Grasshopper and contributed to a research paper on mathematical surface applications.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3>B.S. Computer Science</h3>
+                        <span class="timeline-org">University of Florida &middot; May 2026</span>
+                    </div>
+                    <p>GPA 3.62 &middot; Dean's List (Spring 2023, Fall 2023, Spring 2024). Coursework: Data Structures &amp; Algorithms, Discrete Structures, Linear Algebra.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3>Languages</h3>
+                        <span class="timeline-org">Spoken</span>
+                    </div>
+                    <p>English (native) &middot; Arabic (native) &middot; Japanese (advanced)</p>
+                </div>
             </div>
         </div>
     </section>
@@ -153,13 +300,13 @@
             <div class="contact-content">
                 <div class="contact-info">
                     <p>
-                        I'm open to freelance work, full-time positions, and exciting collaborations.
-                        Let's build something amazing together!
+                        I'm looking for full-time roles in gameplay or systems programming, and I'm always happy
+                        to talk about games, engines, or concurrency. Email is the fastest way to reach me.
                     </p>
                     <div class="contact-details">
                         <div class="contact-item">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                            <span>mohamali9173@gmail.com</span>
+                            <a href="mailto:mohamali9173@gmail.com">mohamali9173@gmail.com</a>
                         </div>
                         <div class="contact-item">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
@@ -181,6 +328,7 @@
                         <textarea id="message" name="message" rows="5" required placeholder="Your message..."></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Send Message</button>
+                    <p class="form-note">Opens your email app with the message filled in.</p>
                 </form>
             </div>
         </div>
@@ -235,6 +383,64 @@
             <img src="assets/resigil-2.png" alt="Re:Sigil screenshot 2">
             <img src="assets/resigil-3.png" alt="Re:Sigil screenshot 3">
         </div>
+    </div>
+</div>
+
+
+<div class="modal" id="queueModal" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content modal-details-content">
+        <button class="modal-close" type="button" aria-label="Close">&times;</button>
+        <h3>Lock-Free Concurrent Queue — Breakdown</h3>
+        <p>
+            An implementation of the Michael-Scott non-blocking queue (PODC '96) in C++17, built to understand
+            what "lock-free" actually buys you and what it costs.
+        </p>
+        <h4>What I built</h4>
+        <ul class="modal-list">
+            <li>Enqueue/dequeue with <code>std::atomic</code> CAS loops, plus the "helping" step that lets threads advance a lagging tail</li>
+            <li>Acquire/release memory ordering instead of blanket <code>seq_cst</code>, avoiding unnecessary fences</li>
+            <li><code>head_</code> and <code>tail_</code> padded onto separate 64-byte cache lines to eliminate false sharing</li>
+            <li>A bump-allocated node pool that sidesteps the ABA / use-after-free hazard without an unsafe <code>delete</code></li>
+            <li>Concurrent correctness tests: FIFO ordering, empty-queue semantics, 8-thread producer races, interleaved workloads</li>
+        </ul>
+        <h4>The honest result</h4>
+        <p>
+            I benchmarked it against a mutex queue across three scenarios (up to 8 threads, 1.6M operations), and the
+            mutex version won on raw throughput on Windows. The README explains why: CAS contention, scheduler behavior,
+            and allocator serialization. It also covers where lock-free structures really win: bounded tail latency
+            and immunity to deadlock.
+        </p>
+        <a class="btn btn-secondary modal-btn" href="https://github.com/Phantom0110/lock-free-queue" target="_blank" rel="noopener">View on GitHub</a>
+    </div>
+</div>
+
+<div class="modal" id="dracoModal" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content modal-details-content">
+        <button class="modal-close" type="button" aria-label="Close">&times;</button>
+        <h3>Draco Disease — Breakdown</h3>
+        <p>A team-based RPG built in Unreal Engine 5 under game-jam time pressure.</p>
+        <h4>My contributions</h4>
+        <ul class="modal-list">
+            <li>Gameplay mechanics for core RPG interactions</li>
+            <li>A cursed altar interaction that grants buffs paired with randomized debuffs, giving the player a risk/reward choice</li>
+            <li>Toon-shading outlines that keep the 2D and 3D elements stylistically consistent</li>
+        </ul>
+    </div>
+</div>
+
+<div class="modal" id="aiRpgModal" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content modal-details-content">
+        <button class="modal-close" type="button" aria-label="Close">&times;</button>
+        <h3>AI RPG Prototype — Breakdown</h3>
+        <p>An experiment in procedurally generated gameplay content, built in Godot with Python.</p>
+        <h4>What I built</h4>
+        <ul class="modal-list">
+            <li>Integration with the OpenAI API to generate new abilities</li>
+            <li>A balancing algorithm that dynamically assigns combat statistics to each generated ability</li>
+        </ul>
     </div>
 </div>
 

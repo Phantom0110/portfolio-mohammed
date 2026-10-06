@@ -501,6 +501,129 @@ img {
     color: var(--accent-primary);
 }
 
+/* ===== Project extras ===== */
+.project-art {
+    background:
+        radial-gradient(circle at 30% 20%, rgba(239, 68, 68, 0.25), transparent 60%),
+        linear-gradient(135deg, var(--bg-tertiary), var(--bg-primary));
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.project-art-code {
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 0.95rem;
+    color: var(--accent-primary);
+    word-break: break-word;
+}
+
+.project-art-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+}
+
+.project-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.project-more {
+    margin-top: 1rem;
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--accent-primary);
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.project-more:hover {
+    text-decoration: underline;
+}
+
+/* ===== Experience Section ===== */
+.experience {
+    padding: 6rem 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    border-left: 2px solid var(--border-color);
+}
+
+.timeline-item {
+    position: relative;
+    padding: 0 0 2rem 2rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -7px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent-primary);
+}
+
+.timeline-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.25rem 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-header h3 {
+    font-size: 1.15rem;
+}
+
+.timeline-org {
+    color: var(--accent-primary);
+    font-size: 0.9rem;
+}
+
+.timeline-item p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.contact-item a {
+    color: inherit;
+}
+
+.contact-item a:hover {
+    color: var(--accent-primary);
+}
+
+.form-note {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.modal-btn {
+    margin-top: 1.5rem;
+}
+
+.modal-content code {
+    color: var(--accent-primary);
+    font-size: 0.9em;
+}
+
 /* ===== Contact Section ===== */
 .contact {
     padding: 6rem 0;
